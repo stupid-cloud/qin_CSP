@@ -1,0 +1,20 @@
+[basic]
+algo = RS
+# 1 VASP; 2 matgl
+calc_code = 2 1 1  
+tot_struc = 2
+nstage = 1
+njob = 2
+
+[structure]
+atype = Cl Na 
+nat = 8 8
+spgnum = all
+
+[matgl]
+jobcmd = python calc.py
+
+[vasp]
+kresol = 0.04 0.04 0.04
+jobcmd = mpirun -np 48 vasp_std
+
